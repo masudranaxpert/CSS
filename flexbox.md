@@ -123,14 +123,6 @@ Cross axis বরাবর items কীভাবে align হবে:
 - `center`: cross axis-এর মাঝখানে ⭐
 - `baseline`: text baseline অনুযায়ী align
 
-**Visual Example:**
-```
-/* Cross Axis (Vertical) */
-stretch:    [↕↕↕] [↕↕↕]
-flex-start: [Top] [Top]
-flex-end:   [Bot] [Bot]
-center:     [Mid] [Mid]
-```
 
 **উদাহরণ:**
 ```css
