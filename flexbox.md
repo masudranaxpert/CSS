@@ -123,6 +123,15 @@ Cross axis বরাবর items কীভাবে align হবে:
 - `center`: cross axis-এর মাঝখানে ⭐
 - `baseline`: text baseline অনুযায়ী align
 
+**Visual Example:**
+```
+/* Cross Axis (Vertical) */
+stretch:    [↕↕↕] [↕↕↕]
+flex-start: [Top] [Top]
+flex-end:   [Bot] [Bot]
+center:     [Mid] [Mid]
+```
+
 **উদাহরণ:**
 ```css
 .container {
@@ -150,6 +159,15 @@ Cross axis বরাবর items কীভাবে align হবে:
 - `wrap`: wrap হবে, নতুন line-এ যাবে
 - `wrap-reverse`: wrap হবে, কিন্তু reverse direction-এ
 
+**Visual Example:**
+```
+nowrap:       [1][2][3][4][5]
+wrap:         [1][2][3]
+              [4][5]
+wrap-reverse: [4][5]
+              [1][2][3]
+```
+
 ---
 
 ### 1.7 Gap (Items-এর মধ্যে Space)
@@ -168,6 +186,13 @@ Items-এর মধ্যে spacing দেওয়ার জন্য:
 - `row-gap: 10px;`: শুধু rows-এর মধ্যে gap
 - `column-gap: 20px;`: শুধু columns-এর মধ্যে gap
 
+**Visual Example:**
+```
+No Gap:  [1][2][3]
+Gap:     [1] .. [2] .. [3]
+            gap    gap
+```
+
 ---
 
 ### 1.8 Flex Items-এর Properties
@@ -185,6 +210,12 @@ Individual items control করার জন্য:
 - `flex-grow: 1;`: available space সমান ভাগে নেবে
 - `flex-grow: 2;`: অন্যদের চেয়ে double space নেবে
 
+**Visual Example:**
+```
+flex-grow: 0    [1][2]......
+flex-grow: 1    [1......][2......]
+```
+
 #### 1.8.2 Flex Shrink (ছোট হওয়া)
 
 ```css
@@ -195,12 +226,25 @@ Individual items control করার জন্য:
 - `flex-shrink: 0;`: shrink হবে না
 - `flex-shrink: 1;`: shrink হতে পারবে (default)
 
+**Visual Example:**
+```
+Container: [......]
+No shrink: [11][22][33] (Overflows)
+Shrink:    [1][2][3]    (Fits)
+```
+
 #### 1.8.3 Flex Basis (Initial Size)
 
 ```css
 .item {
   flex-basis: 200px; /* initial width/height */
 }
+```
+
+**Visual Example:**
+```
+flex-basis: 100px  [  100px  ]
+flex-basis: 200px  [     200px     ]
 ```
 
 #### 1.8.4 Flex Shorthand (একসাথে)
@@ -220,12 +264,28 @@ Individual items control করার জন্য:
 - `flex: none;`: fixed size থাকবে
 - `flex: auto;`: content অনুযায়ী size নেবে
 
+**Visual Example:**
+```
+flex: 1 (Equal)  [  1  ][  2  ]
+flex: none       [1][2]
+```
+
 #### 1.8.5 Align Self (Individual Alignment)
 
 ```css
 .item {
   align-self: center; /* শুধু এই item-টা center হবে */
 }
+```
+
+**Visual Example:**
+```
+Container (flex-start):
+[1]      .       .
+ .     [2]       .
+ .      .       [3]
+     (Self)
+    (Center)
 ```
 
 ---
